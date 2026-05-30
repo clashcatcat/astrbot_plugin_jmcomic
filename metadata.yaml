@@ -1,0 +1,8 @@
+name: astrbot_plugin_jmcomic
+display_name: JMComic 工具
+desc: 为 AstrBot 提供 JMComic 搜索、浏览、详情查询和整本下载工具。
+short_desc: JMComic 搜索与下载插件。
+version: v0.1.0
+author: Sor85
+repo: https://github.com/Sor85/koishi-plugin-chatluna-jmcomic
+astrbot_version: ">=4.9.2,<5"

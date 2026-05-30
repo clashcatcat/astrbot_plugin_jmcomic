@@ -1,0 +1,240 @@
+{
+  "search_tool": {
+    "type": "object",
+    "description": "JMComic 搜索工具设置",
+    "items": {
+      "enabled": {
+        "type": "bool",
+        "description": "是否启用搜索工具",
+        "default": true
+      },
+      "tool_name": {
+        "type": "string",
+        "description": "工具名称",
+        "default": "jmcomic_search"
+      },
+      "description": {
+        "type": "string",
+        "description": "工具描述",
+        "default": "搜索 JMComic 本子，返回 ID、标题、作者、分类和简介。"
+      }
+    }
+  },
+  "browse_tool": {
+    "type": "object",
+    "description": "JMComic 分类浏览工具设置",
+    "items": {
+      "enabled": {
+        "type": "bool",
+        "description": "是否启用分类浏览工具",
+        "default": true
+      },
+      "tool_name": {
+        "type": "string",
+        "description": "工具名称",
+        "default": "jmcomic_browse"
+      },
+      "description": {
+        "type": "string",
+        "description": "工具描述",
+        "default": "按分类、时间范围和排序方式浏览 JMComic 本子。"
+      }
+    }
+  },
+  "info_tool": {
+    "type": "object",
+    "description": "JMComic 详情工具设置",
+    "items": {
+      "enabled": {
+        "type": "bool",
+        "description": "是否启用详情工具",
+        "default": true
+      },
+      "tool_name": {
+        "type": "string",
+        "description": "工具名称",
+        "default": "jmcomic_info"
+      },
+      "description": {
+        "type": "string",
+        "description": "工具描述",
+        "default": "根据 JMComic 本子 ID 查询详情。"
+      }
+    }
+  },
+  "download_tool": {
+    "type": "object",
+    "description": "JMComic 下载工具设置",
+    "items": {
+      "enabled": {
+        "type": "bool",
+        "description": "是否启用下载工具",
+        "default": true
+      },
+      "tool_name": {
+        "type": "string",
+        "description": "工具名称",
+        "default": "jmcomic_download"
+      },
+      "description": {
+        "type": "string",
+        "description": "工具描述",
+        "default": "将一个或多个 JMComic 本子下载为 PDF 或 ZIP。"
+      }
+    }
+  },
+  "recommend_tool": {
+    "type": "object",
+    "description": "JMComic 推荐列表工具设置",
+    "items": {
+      "enabled": {
+        "type": "bool",
+        "description": "是否启用推荐列表工具",
+        "default": true
+      },
+      "tool_name": {
+        "type": "string",
+        "description": "工具名称",
+        "default": "jmcomic_recommend"
+      },
+      "description": {
+        "type": "string",
+        "description": "工具描述",
+        "default": "根据题材、作者或关键词搜索 JMComic，并返回 3 到 5 个候选列表供用户挑选，不会直接下载。"
+      }
+    }
+  },
+  "recommend_download_tool": {
+    "type": "object",
+    "description": "JMComic 推荐并下载工具设置",
+    "items": {
+      "enabled": {
+        "type": "bool",
+        "description": "是否启用推荐并下载工具",
+        "default": true
+      },
+      "tool_name": {
+        "type": "string",
+        "description": "工具名称",
+        "default": "jmcomic_recommend_download"
+      },
+      "description": {
+        "type": "string",
+        "description": "工具描述",
+        "default": "仅当用户明确要求直接下载时使用。根据题材、作者或关键词自动挑选最合适的一本 JMComic，并直接提交下载任务。"
+      }
+    }
+  },
+  "task_status_tool": {
+    "type": "object",
+    "description": "JMComic 任务状态工具设置",
+    "items": {
+      "enabled": {
+        "type": "bool",
+        "description": "是否启用任务状态工具",
+        "default": true
+      },
+      "tool_name": {
+        "type": "string",
+        "description": "工具名称",
+        "default": "jmcomic_task_status"
+      },
+      "description": {
+        "type": "string",
+        "description": "工具描述",
+        "default": "根据任务 ID 查询 JMComic 下载任务状态。"
+      }
+    }
+  },
+  "default_format": {
+    "type": "string",
+    "description": "默认导出格式",
+    "default": "pdf",
+    "options": [
+      "pdf",
+      "zip"
+    ]
+  },
+  "file_name": {
+    "type": "string",
+    "description": "导出文件名模板，可使用 {{name}} 和 {{id}}",
+    "default": "{{name}} ({{id}})"
+  },
+  "password": {
+    "type": "string",
+    "description": "PDF 和 ZIP 默认密码；留空则不加密",
+    "default": ""
+  },
+  "allow_ai_change_format": {
+    "type": "bool",
+    "description": "是否允许模型自行更改默认导出格式",
+    "default": true
+  },
+  "zip_level": {
+    "type": "int",
+    "description": "ZIP 压缩等级，0 最快，9 最慢",
+    "default": 6
+  },
+  "max_download_pages": {
+    "type": "int",
+    "description": "单个本子允许下载的最大页数",
+    "default": 300
+  },
+  "minimum_free_disk_mb": {
+    "type": "int",
+    "description": "下载目录所在磁盘最少可用空间(MB)，0 为关闭",
+    "default": 3000
+  },
+  "retry_count": {
+    "type": "int",
+    "description": "JM API 和图片下载失败时的重试次数",
+    "default": 5
+  },
+  "return_password_to_ai": {
+    "type": "bool",
+    "description": "任务状态工具返回结果时是否附带密码。关闭后 AI 不会看到下载密码",
+    "default": false
+  },
+  "cache": {
+    "type": "bool",
+    "description": "是否保留下载缓存和导出文件",
+    "default": true
+  },
+  "file_expire_hours": {
+    "type": "int",
+    "description": "下载文件和缓存保留小时数",
+    "default": 24
+  },
+  "concurrent_task_limit": {
+    "type": "int",
+    "description": "同时处理的整本下载任务数量",
+    "default": 1
+  },
+  "concurrent_download_limit": {
+    "type": "int",
+    "description": "单个下载任务内同时下载图片的最大数量",
+    "default": 8
+  },
+  "concurrent_decode_limit": {
+    "type": "int",
+    "description": "单个下载任务内同时解密图片的最大数量",
+    "default": 4
+  },
+  "group_whitelist_enabled": {
+    "type": "bool",
+    "description": "是否启用群组白名单。启用后，只有白名单中的群可以使用命令和 LLM 工具",
+    "default": false
+  },
+  "group_whitelist": {
+    "type": "list",
+    "item_type": "string",
+    "description": "允许使用插件的群号列表",
+    "default": [],
+    "hint": "每项填一个群号，例如 123456 或 234567"
+  },
+  "debug": {
+    "type": "bool",
+    "description": "是否输出更多调试日志",
+    "default": false
+  }
+}
